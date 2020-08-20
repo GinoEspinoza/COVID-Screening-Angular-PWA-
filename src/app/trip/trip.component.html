@@ -1,0 +1,16 @@
+<mat-card>
+  <mat-card-content>
+      <h2>Select Trip</h2>
+      <mat-form-field *ngIf="!loading">
+        <mat-label>Select Trip</mat-label>
+        <mat-select [(ngModel)] = "sel_trip">
+          <mat-option *ngFor="let trip of trips" [value]="trip.tripID">
+            {{ trip.tripDate | date }} - {{trip.destination}} - {{trip.groupname}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
+      <br>
+      <button mat-stroked-button color="primary" class="get" (click)="onGetParticipants()">Get Participant List</button>
+  </mat-card-content>
+</mat-card>

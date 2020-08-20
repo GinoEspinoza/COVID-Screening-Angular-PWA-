@@ -1,0 +1,53 @@
+{
+  "index": "/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "resources": {
+        "files": [
+          "/favicon.ico",
+          "/apple-touch-icon.png",
+          "/index.html",
+          "/*.css",
+          "/*.js"
+        ]
+      }
+    }, {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "resources": {
+        "files": [
+          "/assets/**",
+          "/*.(eot|svg|cur|jpg|png|webp|gif|otf|ttf|woff|woff2|ani)"
+        ]
+      }
+    }
+  ],
+  "dataGroups": [{
+    "name": "api-freshness",
+    "urls": [ 
+      "https://www.prayingpelicanmissions.org/missioncontrol/mcapi/survey/staff/trips",
+      "https://www.prayingpelicanmissions.org/missioncontrol/mcapi/survey/**/participants",
+      "https://www.prayingpelicanmissions.org/missioncontrol/mcapi/survey/authorize"
+    ],
+    "cacheConfig": {
+      "strategy": "freshness",
+      "maxSize": 1000,
+      "maxAge": "365d",
+      "timeout": "3s"
+    }
+  },{
+    "name": "api-performance",
+    "urls": [
+      "/assets/i18n/**",
+      "/api/**"
+    ],
+    "cacheConfig": {
+      "strategy": "performance",
+      "maxSize": 1000,
+      "maxAge": "3d"
+    }
+  }]
+}

@@ -1,0 +1,41 @@
+mat-card {
+    max-width: 400px;
+    margin: 2em auto;
+    text-align: center;
+}
+
+mat-form-field {
+    display: block;
+}
+
+.survey-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:10px;
+    text-align: start;
+    border-bottom:1px solid rgba(0,0,0,.12);
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+button.submit{
+    width:100% !important;
+    border-color:#22A494;
+    color:#22A494;
+}
+h2.name{
+    text-align: center;
+    margin-top:30px;
+    color:#22A494;
+}
+p.terms{
+    text-align: start;
+    line-height: 1.5;
+}
+.mat-bottom{
+    text-align: start;
+    margin-bottom:15px;
+}

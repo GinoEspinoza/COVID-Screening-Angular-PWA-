@@ -1,0 +1,40 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+}
+
+/* .mat-toolbar.mat-primary {
+  position: sticky;
+  top: 0;
+} */
+
+.expanded-toolbar {
+  justify-content: space-between;
+  align-items: center;
+  background-color: #22A494!important;
+}
+.expanded-toolbar .home-text button{
+  font-size: 18px;
+}
+.bottom-toolbar{
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0,0,0,0.7) !important;
+  height:100px;
+}
+img.logo{
+  height:80px;
+}
+button.install{
+  border-color:white;
+}
+
+@media screen and (max-width:320px){
+  .expanded-toolbar {
+    flex-direction: column;
+    height: 75px;
+  }
+}

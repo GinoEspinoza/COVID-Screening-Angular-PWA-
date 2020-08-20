@@ -1,0 +1,18 @@
+mat-card {
+    max-width: 400px;
+    margin: 6em auto;
+    text-align: center;
+}
+
+mat-form-field {
+    display: block;
+}
+
+mat-card h2{
+    color :#22A494!important;
+}
+button.get{
+    /* width:100% !important; */
+    border-color:#22A494;
+    color:#22A494;
+}

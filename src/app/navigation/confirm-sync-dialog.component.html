@@ -1,0 +1,8 @@
+<!-- <h1 mat-dialog-title>Hi</h1> -->
+<div mat-dialog-content>
+  <p>Do you want to sync the datas to the server?</p>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">No Thanks</button>
+  <button mat-button mat-raised-button color="primary" [mat-dialog-close]="" (click)="proceed()" cdkFocusInitial>Yes Sure</button>
+</div>

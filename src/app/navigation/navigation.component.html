@@ -1,0 +1,25 @@
+<mat-toolbar color="primary" class="expanded-toolbar">
+  <span class="home-text">
+    <button mat-button routerLink="/">COVID-19 Screening Survey</button>
+  </span>
+  <div fxLayout="row" fxShow="false" fxShow.gt-sm *ngIf="!login_page">
+    <button class="btn-upload" mat-button *ngIf="networkStatus$ | async; else offline" (click) = "syncDatas()">
+      <mat-icon>cloud_upload</mat-icon>
+    </button>
+    <ng-template #offline>
+      <button class="btn-upload" mat-raised-button color="warn" disabled="true"><mat-icon>cloud_upload</mat-icon> {{ n_count }}</button>
+    </ng-template>
+  </div>
+</mat-toolbar>
+<mat-toolbar color="primary" class="bottom-toolbar">
+  <span class="home-text">
+    <img src="/assets/logo-light-outline.png" class="logo">
+  </span>
+  <div fxLayout="row" fxShow="false" fxShow.gt-sm>
+    <button mat-stroked-button class="install" *ngIf="Pwa.promptEvent" (click)="installPwa()">
+      INSTALL
+    </button>
+  </div>
+</mat-toolbar>
+<ngx-ui-loader></ngx-ui-loader>
+<router-outlet></router-outlet>

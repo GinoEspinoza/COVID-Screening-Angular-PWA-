@@ -1,0 +1,39 @@
+<mat-card>
+  <mat-card-content>
+    <h2 class="name" *ngIf="sel_participant">{{ getFullname(sel_participant) }}</h2>
+    <p>{{ sel_trip['groupname'] }}</p>
+    <p>{{ sel_date }}</p>
+    <div class="header">
+      <a mat-raised-button color="basic" [routerLink]="['/participants/'+sel_trip['tripID']]">
+        Back
+      </a>
+    </div>
+    <br>
+    <p>TO BE COMPLETED BY PARTICIPANT</p>
+    <form [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+      <mat-divider></mat-divider>
+      <div *ngFor="let question of questions" class="survey-content full-width-input">
+        <p>{{ question.survey }}</p>
+        <div>
+          <mat-slide-toggle
+            class="example-margin"
+            [color]="accent"
+            formControlName="{{ question.id }}"
+            >
+          </mat-slide-toggle>&nbsp;&nbsp;
+        </div>
+      </div><br>
+      <div class="mat-bottom">
+        <p *ngIf="sel_participant" class="terms">
+          <strong>AGREEMENT</strong>
+          <br>
+          By checking this box and submitting this electronic form, I, {{ getFullname(sel_participant) }}, am electronically signing this COVID-19 Daily Symptom Survey. I agree that I have answered all of the questions within this Survey (verbally or otherwise) truthfully and to the best of my ability. I am also personally assuming all responsibility and liability in regards to my daily personal health and safety.
+          <br>
+          Today’s Date: {{ sel_date }}
+        </p>
+        <mat-checkbox class="example-margin" formControlName="agreement">I agree</mat-checkbox>
+      </div>
+      <button mat-stroked-button color="primary" class="submit" [disabled]="!form.value.agreement" type="submit">SUBMIT DAILY SYMPTOM SURVEY</button>
+    </form>
+  </mat-card-content>
+</mat-card>
